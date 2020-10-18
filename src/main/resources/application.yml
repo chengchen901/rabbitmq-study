@@ -6,4 +6,16 @@ spring:
     password: admin
     listener:
       simple:
+        # 消息预取数
         prefetch: 1
+    cache:
+      channel:
+        # 如果已达到缓存大小，则等待获取通道的时间。如果为0，则始终创建一个新通道。
+        checkout-timeout: 0
+        # 要保留在缓存中的通道数。当checkout-timeout>为0时，表示每个连接的最大通道数。
+        size: 100
+      connection:
+        # 连接工厂缓存模式 ,默认是 channel
+        mode: connection
+        # 缓存的连接数量，仅在mode 为 connection时有效
+        size: 10
