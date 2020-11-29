@@ -1,4 +1,4 @@
-package com.study.rabbitmq.s09_publisher_confirm;
+package com.study.rabbitmq.java.s09_publisher_confirm;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
