@@ -30,11 +30,16 @@ spring:
 # rabbitmq的simple和direct模式的区别：
 # simple：底层是开辟了新的线程池去执行处理逻辑，默认使用simple模式
 # direct：底层是使用spring底层的线程去执行，如果想节约线程资源可以考虑direct
-#    listener:
-#      simple:
+    listener:
+      simple:
 #        # 设置消息手动回复
 #        acknowledge-mode: manual
-#        prefetch: 1
+        # 订阅失败是否直接停止订阅，默认为true
+        missing-queues-fatal: false
+#      direct:
+        # 订阅失败是否直接停止订阅，默认为false
+#        missing-queues-fatal: false
+#        prefetch: 0
 #      direct:
 #        acknowledge-mode: manual
 #        prefetch: 1
